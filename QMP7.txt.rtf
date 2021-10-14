@@ -1,0 +1,127 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;\f2\fswiss\fcharset0 Arial-ItalicMT;
+\f3\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww13080\viewh9480\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 -X
+\f1\i METODO
+\f0\i0  \'91http://quemepongo.com/\'85\'92 -i\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\'93
+\f2\i\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Como usuarie de QueMePongo quiero ver todas las prendas que tengo en mi guardarropas desde el navegador para poder administrarlas
+\f0\i0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'94\
+\
+\ul M\'e9todo\ulnone : GET\
+\ul URI y body\ulnone : http://quemepongo.com/prendas\
+\ul Respuesta posible\ulnone : \
+200 - OK\
+404 - NOT FOUND (siempre que se ingrese mal la direccion)\
+\ul Body de respuesta posible\ulnone :\
+El ID y el resto de los atributos de cada una de las prendas a menos que sean muchas y aclare el tama\'f1o pero no muestre todas. \
+Ejemplo:\
+\{\
+\'93Id\'94: 3,\
+\'93Tipo\'94: \'93remera\'94\
+\'93color\'94: \'93azul\'94\
+\}\
+\
+\'93
+\f2\i\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Como usuarie de QueMePongo, quiero crear una prenda desde el navegador
+\f0\i0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'94\
+\
+\ul M\'e9todo\ulnone : POST\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 URI y body\ulnone : http://quemepongo.com/prendas \'97data  \'b4\{ \'93tipo\'94: \'93pantalon\'94, \'93color\'94: \'93verde\'94 \}\'b4  -H \'b4Content-Type: application/json\'b4\
+(Tambien podr\'eda haber especificado el id, pero si no, se autogenera)\
+\ul Respuesta posible\ulnone : \
+201 - CREATED\
+\ul Body de respuesta posible\ulnone :\
+\{\
+\'93Tipo\'94: \'93pantalon\'94\
+\'93Color\'94: \'93verde\'94\
+\'93Id\'94: 100\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\'93
+\f2\i\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Como usuarie de QueMePongo quiero ver una prenda en particular que tengo en mi guardarropas para poder editarla
+\f0\i0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'94\
+\
+\ul M\'e9todo\ulnone : GET\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 URI y body\ulnone : http://quemepongo.com/prendas/\{id\}\
+\ul Respuesta posible\ulnone : \
+200 - OK\
+404 - NOT FOUND (si no es un id v\'e1lido)\
+\ul Body de respuesta posible\ulnone :\
+\{\
+\'93Id\'94: 3,\
+\'93Tipo\'94: \'93remera\'94\
+\'93color\'94: \'93azul\'94\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+En caso de querer editarla:\
+\ul M\'e9todo\ulnone : PUT\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 URI y body\ulnone : http://quemepongo.com/prendas/\{id\} \'97data \'91\{\'93color\'94:\'94rojo\'94\}\'92 -H \'b4Content-Type: application/json\'b4\
+\ul Respuesta posible\ulnone :\
+200 - OK\
+\ul Body de respuesta posible\ulnone :\
+\{\
+\'93color\'94: \'93rojo\'94\
+\'93Id\'94: 3\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\'93
+\f3\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 C
+\f2\i omo usuarie de QueMePongo, quiero poder eliminar una prenda de mi guardarropas
+\f0\i0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'94\
+\
+\ul M\'e9todo\ulnone : DELETE\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 URI y body\ulnone : http://quemepongo.com/prendas/\{id\}\
+\ul Respuesta posible\ulnone : \
+200 - OK\
+404 - NOT FOUND (si la prenda no existe)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\'93
+\f2\i\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Como usuarie de QueMePongo, quiero poder ver mis eventos para administrarlos
+\f0\i0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'94\
+\
+\ul M\'e9todo\ulnone : GET\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 URI y body\ulnone : http://quemepongo.com/eventos\
+\ul Respuesta posible\ulnone : 200 - OK\
+\ul Body de respuesta posible\ulnone : evento con sus atributos igual que la prenda.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\'93
+\f2\i\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Como usuarie de QueMePongo, quiero poder abrir las sugerencias de prendas para un evento\'a0en mi navegador
+\f0\i0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'94\
+\
+\ul M\'e9todo\ulnone : GET\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 URI y body\ulnone : http://quemepongo.com/eventos/\{id\}/sugerencias\
+\ul Respuesta posible\ulnone : \
+200 - OK\
+404 - NOT FOUND (si no es un id v\'e1lido)\
+\ul Body de respuesta posible\ulnone : cada sugerencia con sus atributos (las de ese evento en espec\'edfico).\
+\
+\
+\
+}
